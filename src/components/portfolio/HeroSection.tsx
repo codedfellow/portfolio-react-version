@@ -235,13 +235,36 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
+        <div className="absolute bottom-32 left-1/2 -translate-x-1/2 animate-bounce hidden lg:block">
           <button
             onClick={() => scrollToSection('about')}
             className="w-10 h-10 rounded-full border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all"
           >
             <ArrowDown className="w-5 h-5" />
           </button>
+        </div>
+
+        {/* Profile Image Section */}
+        <div className="w-full flex justify-center items-center mt-16 lg:mt-20 mb-8">
+          <div className="relative group">
+            {/* Gradient background glow - light mode */}
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-300 dark:opacity-60" />
+            
+            {/* Gradient background glow - dark mode enhanced */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500/50 via-blue-600/50 to-purple-700/50 rounded-full blur-md dark:opacity-50 opacity-0" />
+            
+            {/* Circular image container */}
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-background shadow-2xl dark:shadow-cyan-500/20 light:shadow-blue-400/20">
+              <img
+                src="/images/pro-head-shot.png"
+                alt="Elvis Aghaulor - Professional Headshot"
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Overlay effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/5 dark:to-white/5 group-hover:from-cyan-500/10 group-hover:via-blue-500/10 group-hover:to-purple-600/10 dark:group-hover:to-white/10 transition-all duration-300" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
