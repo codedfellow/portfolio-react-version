@@ -126,9 +126,7 @@ const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground flex items-center gap-1">
-            &copy; {currentYear} Elvis Aghaulor. Built with
-            <Heart className="w-3 h-3 text-red-500 inline" />
-            using React & Tailwind CSS
+            &copy; {currentYear} Elvis Aghaulor.
           </p>
           <button
             onClick={scrollToTop}

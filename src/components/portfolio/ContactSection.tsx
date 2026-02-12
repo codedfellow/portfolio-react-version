@@ -64,13 +64,13 @@ const ContactSection: React.FC = () => {
       icon: Phone,
       label: 'Phone',
       value: '+234 810 538 6673',
-      href: 'tel:+2348105386673',
+      href: 'javascript:void(0)',
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Lagos, Nigeria',
-      href: '#',
+      href: 'javascript:void(0)',
     },
   ];
 
@@ -94,7 +94,7 @@ const ContactSection: React.FC = () => {
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-5 space-y-6">
             {contactInfo.map((item, i) => (
               <a
                 key={i}
@@ -116,7 +116,7 @@ const ContactSection: React.FC = () => {
               <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-4">Connect With Me</h4>
               <div className="flex items-center gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/codedfellow"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-200 hover:scale-110 card-glow"
@@ -124,7 +124,7 @@ const ContactSection: React.FC = () => {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/elvis-aghaulor-b66a13149/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-200 hover:scale-110 card-glow"
@@ -154,102 +154,6 @@ const ContactSection: React.FC = () => {
                 Send Email Directly
               </a>
             </div>
-          </div>
-
-          {/* Contact form */}
-          <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="p-6 lg:p-8 rounded-2xl border border-border bg-card">
-              <h3 className="text-xl font-bold text-foreground mb-6">Send a Message</h3>
-
-              {/* Status messages */}
-              {formStatus === 'success' && (
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 mb-6">
-                  <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <p className="text-sm font-medium">Message sent successfully! I'll get back to you soon.</p>
-                </div>
-              )}
-              {formStatus === 'error' && (
-                <div className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 mb-6">
-                  <AlertCircle className="w-5 h-5 flex-shrink-0" />
-                  <p className="text-sm font-medium">Something went wrong. Please try again.</p>
-                </div>
-              )}
-
-              <div className="grid sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Name</label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleChange('name', e.target.value)}
-                    placeholder="Your name"
-                    className={`w-full px-4 py-3 rounded-xl border bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all ${
-                      errors.name ? 'border-red-500' : 'border-border'
-                    }`}
-                  />
-                  {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1.5">Email</label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    placeholder="your@email.com"
-                    className={`w-full px-4 py-3 rounded-xl border bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all ${
-                      errors.email ? 'border-red-500' : 'border-border'
-                    }`}
-                  />
-                  {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <label className="block text-sm font-medium text-foreground mb-1.5">Subject</label>
-                <input
-                  type="text"
-                  value={formData.subject}
-                  onChange={(e) => handleChange('subject', e.target.value)}
-                  placeholder="What's this about?"
-                  className={`w-full px-4 py-3 rounded-xl border bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all ${
-                    errors.subject ? 'border-red-500' : 'border-border'
-                  }`}
-                />
-                {errors.subject && <p className="text-xs text-red-500 mt-1">{errors.subject}</p>}
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-medium text-foreground mb-1.5">Message</label>
-                <textarea
-                  value={formData.message}
-                  onChange={(e) => handleChange('message', e.target.value)}
-                  placeholder="Tell me about your project or opportunity..."
-                  rows={5}
-                  className={`w-full px-4 py-3 rounded-xl border bg-background text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none ${
-                    errors.message ? 'border-red-500' : 'border-border'
-                  }`}
-                />
-                {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
-              </div>
-
-              <button
-                type="submit"
-                disabled={formStatus === 'sending'}
-                className="w-full px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-500/25"
-              >
-                {formStatus === 'sending' ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
           </div>
         </div>
       </div>

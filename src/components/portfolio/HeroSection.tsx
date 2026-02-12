@@ -103,12 +103,20 @@ const HeroSection: React.FC = () => {
                 <Mail className="w-4 h-4" />
                 Contact Me
               </button>
+              <a
+                href="/resume/Elvis%20Aghaulor%20CV.pdf"
+                download="Elvis Aghaulor Resume.pdf"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-primary/40 bg-primary/5 text-primary font-semibold hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+              >
+                <FileText className="w-4 h-4" />
+                Download CV
+              </a>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-8 justify-center lg:justify-start animate-fade-in-up animation-delay-500">
               <a
-                href="https://github.com"
+                href="https://github.com/codedfellow"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 rounded-xl border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-200 hover:scale-110"
@@ -117,7 +125,7 @@ const HeroSection: React.FC = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/elvis-aghaulor-b66a13149/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-11 h-11 rounded-xl border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-200 hover:scale-110"

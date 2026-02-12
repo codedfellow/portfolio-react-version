@@ -20,7 +20,7 @@ const highlights = [
   {
     icon: Database,
     title: 'Database Design',
-    description: 'Architecting efficient data solutions with SQL Server, MySQL, and MongoDB',
+    description: 'Architecting efficient data solutions with SQL Server, Oracle SQL, MySQL, and MongoDB',
   },
   {
     icon: Users,

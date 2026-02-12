@@ -12,6 +12,8 @@ type Project = {
   features: string[];
   category: string;
   image?: string;
+  projectUrl?: string;
+  sourceCodeUrl?: string;
 };
 
 const projects: Project[] = [
@@ -25,7 +27,9 @@ const projects: Project[] = [
     gradient: 'from-emerald-500 to-teal-600',
     features: ['Product Management', 'Shopping Cart', 'User Authentication', 'Order Management', 'RESTful API', 'Responsive Design'],
     category: 'Full Stack',
-    image: 'https://d64gsuwffb70l.cloudfront.net/68cd60f72fc699f080b8e261_1770843241884_4a4e010a.jpg',
+    image: '/images/aerial-view-factory-trucks-parked-near-warehouse-daytime.jpg',
+    projectUrl: 'https://apexecommerce.azurewebsites.net/',
+    sourceCodeUrl: 'https://dev.azure.com/aghaulorelvis/Ecommerce/',
   },
   {
     id: 'mail',
@@ -37,7 +41,9 @@ const projects: Project[] = [
     gradient: 'from-blue-500 to-indigo-600',
     features: ['Email Composing', 'Scheduled Sending', 'SMTP Integration', 'Background Service', 'MongoDB Storage', 'Email Templates'],
     category: 'Full Stack',
-    image: 'https://d64gsuwffb70l.cloudfront.net/68cd60f72fc699f080b8e261_1770843244866_ec052b09.jpg',
+    image: '/images/cloud-storage-background-business-network-design.jpg',
+    projectUrl: 'https://bulkmailmanager.azurewebsites.net/',
+    sourceCodeUrl: 'https://github.com/codedfellow/MailSenderProject.git',
   },
   {
     id: 'cryptify',
@@ -49,7 +55,9 @@ const projects: Project[] = [
     gradient: 'from-purple-500 to-pink-600',
     features: ['AES Encryption', 'XOR Cipher', 'Algorithm Comparison', 'Interactive UI', 'Real-time Processing', 'Multiple Algorithms'],
     category: 'Security',
-    image: 'https://d64gsuwffb70l.cloudfront.net/68cd60f72fc699f080b8e261_1770843246846_eff76a4d.jpg',
+    image: '/images/concept-online-storage.jpg',
+    projectUrl: 'https://cryptify-gse8hrghashxb0hp.canadacentral-01.azurewebsites.net/',
+    sourceCodeUrl: 'https://github.com/codedfellow/Cryptify',
   },
   {
     id: 'credit',
@@ -276,20 +284,28 @@ const ProjectsSection: React.FC = () => {
                   >
                     Close
                   </button>
-                  <a
-                    href="#"
-                    className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Live Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="px-6 py-2.5 rounded-xl border border-border text-sm font-medium text-foreground hover:bg-muted/50 transition-all flex items-center gap-2"
-                  >
-                    <Github className="w-4 h-4" />
-                    Source Code
-                  </a>
+                  {selectedProject.projectUrl && (
+                    <a
+                      href={selectedProject.projectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </a>
+                  )}
+                  {selectedProject.sourceCodeUrl && (
+                    <a
+                      href={selectedProject.sourceCodeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-2.5 rounded-xl border border-border text-sm font-medium text-foreground hover:bg-muted/50 transition-all flex items-center gap-2"
+                    >
+                      <Github className="w-4 h-4" />
+                      Source Code
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
