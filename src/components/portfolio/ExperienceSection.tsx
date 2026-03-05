@@ -14,10 +14,22 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    id: 'advancly',
+    company: 'Advancly',
+    role: 'Backend Engineer',
+    period: 'Feb 2026 - Present',
+    location: 'Lagos, Nigeria',
+    type: 'full-time',
+    description: [
+      'Monitored the performance of production applications and generated reports.',
+    ],
+    technologies: ['.NET 8', 'Entity Framework Core', 'REST Api'],
+  },
+  {
     id: 'sterling',
     company: 'SterlingPRO Business Applications',
     role: 'Software Developer',
-    period: 'Sep 2025 - Present',
+    period: 'Sep 2025 - Feb 2026',
     location: 'Lagos, Nigeria',
     type: 'full-time',
     description: [
