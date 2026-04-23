@@ -210,12 +210,12 @@ const ProjectsSection: React.FC = () => {
 
         {/* Project detail modal */}
         {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setSelectedProject(null)}
             />
-            <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-card border border-border rounded-2xl shadow-2xl">
+            <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto overflow-x-hidden bg-card border border-border rounded-2xl shadow-2xl">
               {/* Modal header */}
               {selectedProject.image ? (
                 <div className="relative h-56 overflow-hidden rounded-t-2xl">
@@ -233,13 +233,13 @@ const ProjectsSection: React.FC = () => {
                 </div>
               )}
 
-              <div className="p-6 lg:p-8">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${selectedProject.gradient} flex items-center justify-center`}>
-                    <selectedProject.icon className="w-6 h-6 text-white" />
+              <div className="p-4 sm:p-6 lg:p-8">
+                <div className="flex items-start gap-3 mb-2">
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${selectedProject.gradient} flex items-center justify-center flex-shrink-0`}>
+                    <selectedProject.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-foreground">{selectedProject.title}</h3>
+                  <div className="min-w-0">
+                    <h3 className="text-xl sm:text-2xl font-bold text-foreground leading-tight break-words">{selectedProject.title}</h3>
                     <span className="text-xs text-primary font-medium">{selectedProject.category}</span>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ const ProjectsSection: React.FC = () => {
                 {/* Features */}
                 <div className="mb-6">
                   <h4 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-3">Key Features</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {selectedProject.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-muted-foreground">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -277,21 +277,15 @@ const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-3 pt-4 border-t border-border">
-                  <button
-                    onClick={() => setSelectedProject(null)}
-                    className="px-6 py-2.5 rounded-xl border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
-                  >
-                    Close
-                  </button>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 pt-4 border-t border-border">
                   {selectedProject.projectUrl && (
                     <a
                       href={selectedProject.projectUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center gap-2"
+                      className="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-semibold hover:from-cyan-400 hover:to-blue-500 transition-all flex items-center justify-center gap-2"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 flex-shrink-0" />
                       Live Demo
                     </a>
                   )}
@@ -300,12 +294,18 @@ const ProjectsSection: React.FC = () => {
                       href={selectedProject.sourceCodeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-2.5 rounded-xl border border-border text-sm font-medium text-foreground hover:bg-muted/50 transition-all flex items-center gap-2"
+                      className="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl border border-border text-sm font-medium text-foreground hover:bg-muted/50 transition-all flex items-center justify-center gap-2 break-all"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-4 h-4 flex-shrink-0" />
                       Source Code
                     </a>
                   )}
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="w-full sm:w-auto sm:ml-auto px-5 py-2.5 rounded-xl border border-border text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                  >
+                    Close
+                  </button>
                 </div>
               </div>
             </div>

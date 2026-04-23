@@ -22,8 +22,11 @@ const experiences: Experience[] = [
     type: 'full-time',
     description: [
       'Monitored the performance of production applications and generated reports.',
+      'Developed new features and fixed bugs on the backend API',
+      'Created and modified reports and dashboards on Metabase.',
+      'Deployment to Azure App Service with CI/CD pipelines on Azure DevOps.'
     ],
-    technologies: ['.NET 8', 'Entity Framework Core', 'REST Api'],
+    technologies: ['.NET 8', 'Entity Framework Core', 'REST Api', 'Metabase', 'MySQL', 'PostgreSQL', 'Azure SQL Database', 'Azure App Service', 'Azure DevOps', 'CI/CD'],
   },
   {
     id: 'sterling',
@@ -109,19 +112,17 @@ const ExperienceSection: React.FC = () => {
                 return (
                   <div key={exp.id} className="relative pl-16 lg:pl-20">
                     {/* Timeline dot */}
-                    <div className={`absolute left-4 lg:left-6 top-6 w-4 h-4 rounded-full border-2 transition-colors duration-300 ${
-                      index === 0
-                        ? 'bg-primary border-primary shadow-lg shadow-primary/30'
-                        : 'bg-card border-border'
-                    }`} />
+                    <div className={`absolute left-4 lg:left-6 top-6 w-4 h-4 rounded-full border-2 transition-colors duration-300 ${index === 0
+                      ? 'bg-primary border-primary shadow-lg shadow-primary/30'
+                      : 'bg-card border-border'
+                      }`} />
 
                     {/* Card */}
                     <div
-                      className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                        isExpanded
-                          ? 'border-primary/30 bg-card shadow-lg'
-                          : 'border-border bg-card hover:border-primary/20'
-                      }`}
+                      className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isExpanded
+                        ? 'border-primary/30 bg-card shadow-lg'
+                        : 'border-border bg-card hover:border-primary/20'
+                        }`}
                     >
                       {/* Header - clickable */}
                       <button
@@ -130,11 +131,10 @@ const ExperienceSection: React.FC = () => {
                       >
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <span className={`px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider ${
-                              index === 0
-                                ? 'bg-emerald-500/10 text-emerald-500'
-                                : 'bg-muted text-muted-foreground'
-                            }`}>
+                            <span className={`px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider ${index === 0
+                              ? 'bg-emerald-500/10 text-emerald-500'
+                              : 'bg-muted text-muted-foreground'
+                              }`}>
                               {index === 0 ? 'Current' : exp.type === 'trainee' ? 'Trainee' : 'Previous'}
                             </span>
                           </div>
