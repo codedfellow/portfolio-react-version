@@ -77,7 +77,7 @@ const HeroSection: React.FC = () => {
             </div>
 
             <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed animate-fade-in-up animation-delay-300">
-              A result-driven Full Stack Developer with over <span className="text-foreground font-semibold">6 years of experience</span> building 
+              A result-driven Full Stack Developer with over <span className="text-foreground font-semibold">6+ years of experience</span> building 
               scalable web applications with <span className="text-primary font-semibold">C#</span>, <span className="text-primary font-semibold">.NET</span>, 
               <span className="text-primary font-semibold"> Angular</span>, and cloud technologies. Based in Lagos, Nigeria.
             </p>

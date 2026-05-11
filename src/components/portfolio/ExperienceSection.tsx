@@ -22,7 +22,7 @@ const experiences: Experience[] = [
     type: 'full-time',
     description: [
       'Monitored the performance of production applications and generated reports.',
-      'Developed new features and fixed bugs on the backend API',
+      'Developed new features and fixed bugs on the backend API using .Net (C#), PostgreSQL, MySQL and MSSQL databases.',
       'Created and modified reports and dashboards on Metabase.',
       'Deployment to Azure App Service with CI/CD pipelines on Azure DevOps.'
     ],

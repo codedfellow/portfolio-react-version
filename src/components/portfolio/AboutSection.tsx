@@ -64,7 +64,7 @@ const AboutSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
           <div>
             <p className="text-muted-foreground leading-relaxed mb-6 text-base lg:text-lg">
-              I'm a result-driven Full Stack Developer with over 6 years of experience in software development 
+              I'm a result-driven Full Stack Developer with 6+ years of experience in software development 
               with <span className="text-foreground font-medium">C#, JavaScript, TypeScript</span> and other related tools, 
               frameworks, and platforms. Proficient in leveraging frameworks like{' '}
               <span className="text-primary font-medium">ASP.NET, .Net, Angular, React</span> to develop scalable and efficient solutions.
